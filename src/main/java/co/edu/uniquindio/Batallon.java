@@ -130,6 +130,18 @@ public class Batallon {
         return resultado;
     }
 
+    //Se agrega funcion faltante
+
+    public boolean eliminarVehiculo(String id) {
+        boolean eliminado = false;
+        Vehiculo vehiculo = buscarVehiculo(id);
+        if (vehiculo != null && vehiculo.getListaDetallesMision().isEmpty()) {
+            listaVehiculos.remove(vehiculo);
+            eliminado = true;
+        }
+        return eliminado;
+    }
+
     public ArrayList<Vehiculo> getListaVehiculos() {
         return new ArrayList<>(listaVehiculos);
     }
